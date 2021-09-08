@@ -8,19 +8,34 @@ namespace ejercicio02
 {
     class CuentaCorrienteDolares : CuentaBancaria
     {
-        public CuentaCorrienteDolares(float monto) : base(monto)
+        public CuentaCorrienteDolares(float fondos) : base(fondos)
         {
         }
-        public override void extraccion(int monto, TipoExtraccion tipo)
+        public override void Extraccion(int monto, TipoExtraccion tipo)
         {
-            if (tipo == TipoExtraccion.CajeroAutomatico)
+            if ((Fondos - monto) < 0)
             {
-                Monto -= 200;
+                Console.WriteLine("No tiene fondos suficientes");
             }
             else
             {
-                Monto -= monto;
+                if (tipo == TipoExtraccion.CajeroAutomatico)
+                {
+                    if (monto > 200)
+                    {
+                        Console.WriteLine("El limite de extracción es de $20.000");
+                    }
+                    else
+                    {
+                        Fondos -= monto;
+                    }
+                }
+                else
+                {
+                    Fondos -= monto;
+                }
             }
+            
 
         }
     }

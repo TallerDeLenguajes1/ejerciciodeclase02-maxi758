@@ -13,21 +13,21 @@ namespace ejercicio02
     }
     class CuentaBancaria
     {
-        public float Monto { get; set; }
+        public float Fondos { get; set; }
         public CuentaBancaria()
         {
 
         }
 
-        public CuentaBancaria(float monto)
+        public CuentaBancaria(float fondos)
         {
-            Monto = monto;
+            Fondos = fondos;
         }
-        public void insercion(int monto)
+        public void Insercion(int monto)
         {
-
+            Fondos += monto;
         }
-        public virtual void extraccion(int monto, TipoExtraccion tipo)
+        public virtual void Extraccion(int monto, TipoExtraccion tipo)
         {
             Console.WriteLine("vacio");
         }
