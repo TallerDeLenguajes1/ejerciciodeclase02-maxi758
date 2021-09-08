@@ -13,6 +13,14 @@ namespace ejercicio02
         }
         public override void extraccion(int monto, TipoExtraccion tipo)
         {
+            if (tipo == TipoExtraccion.CajeroAutomatico)
+            {
+                Monto -= 200;
+            }
+            else
+            {
+                Monto -= monto;
+            }
 
         }
     }
